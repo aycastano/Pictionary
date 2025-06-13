@@ -9,6 +9,10 @@ Pictionary Multiplayer es un juego de dibujo y adivinanza en tiempo real donde l
 - **Cliente Web**: Interfaz construida con React y TailwindCSS
 - **Cliente Desktop**: Aplicación nativa construida con Tauri v2
 
+Actualmente, solo un jugador puede dibujar y otro puede adivinar a la vez. Debido a la premura del tiempo, no alcancé a implementar un sistema de ping/pong que permitiera manejar múltiples participantes concurrentes de forma robusta.
+
+
+
 ### Características principales
 
 - 🎮 Juego en tiempo real con WebSockets
