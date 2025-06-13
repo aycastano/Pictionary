@@ -1,28 +1,22 @@
 # 🎨 Pictionary Multiplayer
 
-Un juego de Pictionary en tiempo real con versiones web y de escritorio, construido con tecnologías modernas y una arquitectura limpia.
+A real-time Pictionary game with web and desktop versions, built using modern technologies and a clean architecture.
 
-## 📝 Descripción
+## 📝 Description
 
-Pictionary Multiplayer es un juego de dibujo y adivinanza en tiempo real donde los jugadores se turnan para dibujar y adivinar palabras. El juego soporta dos tipos de clientes:
-
-- **Cliente Web**: Interfaz construida con React y TailwindCSS
-- **Cliente Desktop**: Aplicación nativa construida con Tauri v2
-
-Actualmente, solo un jugador puede dibujar y otro puede adivinar a la vez. Debido a la premura del tiempo, no alcancé a implementar un sistema de ping/pong que permitiera manejar múltiples participantes concurrentes de forma robusta.
+Description
 
 
+### Main Features
 
-### Características principales
+🎮 Real-time gameplay with WebSockets
+🖌️ Interactive drawing canvas
+👥 Automatic turn-based system
+📊 Real-time scoring
+🎯 Random words to draw
+💻 Cross-platform support (Web and Desktop)
 
-- 🎮 Juego en tiempo real con WebSockets
-- 🖌️ Canvas interactivo para dibujar
-- 👥 Sistema de turnos automático
-- 📊 Puntuación en tiempo real
-- 🎯 Palabras aleatorias para dibujar
-- 💻 Soporte multiplataforma (Web y Desktop)
-
-## 🛠️ Tecnologías
+## 🛠️ Technologies
 
 ### Frontend (Web)
 - TypeScript
@@ -38,71 +32,71 @@ Actualmente, solo un jugador puede dibujar y otro puede adivinar a la vez. Debid
 ### Backend
 - FastAPI (Python)
 - WebSockets
-- Arquitectura Limpia/Hexagonal
+- Clean/Hexagonal Architecture
 
-## 📋 Requisitos
+## 📋 Requirements
 
-### Sistema
+### system
 - Node.js v18 o superior
 - Python 3.10 o superior
 - Rust (para Tauri)
 - Cargo (gestor de paquetes de Rust)
 
-### Herramientas
+### Tools
 - Tauri CLI (`cargo install tauri-cli`)
 - npm o yarn
 - pip (gestor de paquetes de Python)
 
-## 🚀 Instalación y Ejecución
+## 🚀 Installation and Execution
 
-### 1. Clonar el repositorio
+### 1. Clone the repository
 ```bash
 git clone [<url-del-repositorio>](https://github.com/aycastano/Pictionary.git)
 cd pictionary
 ```
 
-### 2. Configurar el Backend
+### 2. Configure the Backend
 
 ```bash
-# Navegar al directorio del backend
+# Navigate to the backend directory
 cd backend
 
-# Crear entorno virtual
+# Create a virtual environment
 python -m venv venv
 
-# Activar entorno virtual
+# Activate the virtual environment
 # En Windows:
 ./venv\Scripts\activate
 # En Unix/MacOS:
 source venv/bin/activate
 
-# Instalar dependencias
+# Install dependencies
 pip install -r requirements.txt
 
-# Iniciar el servidor
+# Start the server
 uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
 ```
 
-### 3. Configurar el Frontend Web
+### 3. Configure the Web Frontend
 
 ```bash
-# Navegar al directorio del frontend
+# Navigate to the frontend directory
 cd frontend
 
-# Instalar dependencias
+# Install dependenciess
 npm install
 
-# Iniciar el servidor de desarrollo
+# Start the development server
 npm run dev
 ```
 
-### 4. Configurar el Cliente Desktop
+### 4. Configure the Desktop Client
 
 ```bash
-# Navegar al directorio del cliente desktop
+# Navigate to the desktop client directory
 cd desktop
 
-# Instalar dependencias de Python
+# Install dependenciess
 python -m venv venv
 # En Windows:
 ./venv\Scripts\activate
@@ -110,15 +104,15 @@ python -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
 
-# Instalar dependencias de Node
+# Install dependenciess
 npm install
 
 
-# Iniciar en modo desarrollo
-npm run tauri dev
+# Start in development mode
+python.py
 ```
 
-## 🏗️ Estructura del Proyecto
+## 🏗️ Project Structure
 
 ```
 pictionary/
@@ -144,28 +138,22 @@ pictionary/
 └── README.md
 ```
 
-## 🎮 Cómo Jugar
+### 🎮 How to Play
+Start the backend server
+Open the web or desktop client
+The game will automatically assign the roles of drawer and guesser
+The drawer will see the word to draw
+The guesser must type their attempt in the text field
+Points are awarded for correct guesses
+Roles are alternated automatically
 
-1. Inicia el servidor backend
-2. Abre el cliente web o desktop
-3. El juego asignará automáticamente los roles de dibujante y adivinador
-4. El dibujante verá la palabra a dibujar
-5. El adivinador debe escribir su intento en el campo de texto
-6. Los puntos se otorgan por adivinanzas correctas
-7. Los roles se alternan automáticamente
+### 📝 License
+This project is licensed under the MIT License - see the LICENSE file for more details.
 
+### 👥 Authors
+Yamid Castaño - Initial Work - https://github.com/aycastano/Pictionary
 
-
-## 📝 Licencia
-
-Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) para más detalles.
-
-## 👥 Autores
-
-- Yamid Castaño - *Trabajo Inicial* - https://github.com/aycastano/Pictionary
-
-## 🙏 Agradecimientos
-
-- FastAPI por el excelente framework
-- Tauri por hacer posible las aplicaciones de escritorio con web technologies
-- React y TailwindCSS por las herramientas de UI
+🙏 Acknowledgments
+FastAPI for the excellent framework
+Tauri for making desktop applications possible with web technologies
+React and TailwindCSS for the UI tools
