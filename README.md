@@ -53,7 +53,7 @@ Pictionary Multiplayer es un juego de dibujo y adivinanza en tiempo real donde l
 
 ### 1. Clonar el repositorio
 ```bash
-git clone <url-del-repositorio>
+git clone [<url-del-repositorio>](https://github.com/aycastano/Pictionary.git)
 cd pictionary
 ```
 
