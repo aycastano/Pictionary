@@ -98,8 +98,17 @@ npm run dev
 # Navegar al directorio del cliente desktop
 cd desktop
 
-# Instalar dependencias
+# Instalar dependencias de Python
+python -m venv venv
+# En Windows:
+./venv\Scripts\activate
+# En Unix/MacOS:
+source venv/bin/activate
+pip install -r requirements.txt
+
+# Instalar dependencias de Node
 npm install
+
 
 # Iniciar en modo desarrollo
 npm run tauri dev
