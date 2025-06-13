@@ -149,7 +149,7 @@ Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) par
 
 ## 👥 Autores
 
-- Yamid Castaño - *Trabajo Inicial* - [TuUsuario](https://github.com/TuUsuario)
+- Yamid Castaño - *Trabajo Inicial* - https://github.com/aycastano/Pictionary
 
 ## 🙏 Agradecimientos
 
