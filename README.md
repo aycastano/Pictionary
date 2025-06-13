@@ -5,6 +5,10 @@ A real-time Pictionary game with web and desktop versions, built using modern te
 ## 📝 Description
 
 Description
+Pictionary Multiplayer is a real-time drawing and guessing game where players take turns drawing and guessing words. The game supports two types of clients:
+-- Web Client: Interface built with React and TailwindCSS
+-- Desktop Client: Native application built with Tauri v2
+Currently, only one player can draw and another can guess at a time. Due to time constraints, I wasn't able to implement a ping/pong system to robustly support multiple concurrent participants.
 
 
 ### Main Features
