@@ -164,17 +164,17 @@ React and TailwindCSS for the UI tools
 
 ### Improvements
 
-### Manejo de Variables de Entorno
-Se implementaron dos archivos `.env` separados para mejorar la configuración:
+### Environment Variable Management
+Two separate .env files were implemented to improve configuration:
 
-1. **Backend (.env)**:
-   - Permite configurar el servidor sin modificar el código
-   - Controla los timeouts de WebSocket
-   - Gestiona los orígenes CORS permitidos
+### Backend (.env):
+Allows server configuration without modifying the code
+Controls WebSocket timeouts
+Manages allowed CORS origins
 
-2. **Frontend (.env)**:
-   - Configura la URL del WebSocket
-   - Permite cambiar el servidor sin recompilar
+### Frontend (.env):
+Configures the WebSocket URL
+Allows switching servers without recompiling
 
 ### Model game.py
 The game.py file is kept in its original version for the following reasons:
