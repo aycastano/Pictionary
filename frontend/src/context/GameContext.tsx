@@ -38,7 +38,7 @@ interface GameContextType {
 
 const GameContext = createContext<GameContextType | undefined>(undefined);
 
-const WS_URL = "ws://localhost:8000/api/v1/ws";
+const WS_URL = import.meta.env.VITE_WS_URL || "ws://localhost:8000/api/v1/ws";
 const MAX_RECONNECT_ATTEMPTS = 5;
 const RECONNECT_DELAY = 3000; // 3 segundos
 const INITIAL_CONNECTION_DELAY = 1000; // 1 segundo de espera antes del primer intento
