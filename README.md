@@ -164,30 +164,30 @@ React and TailwindCSS for the UI tools
 
 ### Improvements
 
-### Environment Variable Management
-Two separate .env files were implemented to improve configuration:
-
-### Backend (.env):
-Allows server configuration without modifying the code
-Controls WebSocket timeouts
-Manages allowed CORS origins
-
-### Frontend (.env):
-Configures the WebSocket URL
-Allows switching servers without recompiling
-
-### Model game.py
-The game.py file is kept in its original version for the following reasons:
-
-### Compatibility:
-It is used by game_service.py for data validation
-It provides the necessary Pydantic models for WebSocket communication
-It is a direct dependency of game_service.py
-It provides the base structure for data validation
-It facilitates communication between frontend and backend
-
-### Benefits:
-Automatic data validation
-Clear and consistent structure
-Eases communication between frontend and backend
+  ### Environment Variable Management
+  Two separate .env files were implemented to improve configuration:
+  
+  ### Backend (.env):
+  Allows server configuration without modifying the code
+  Controls WebSocket timeouts
+  Manages allowed CORS origins
+  
+  ### Frontend (.env):
+  Configures the WebSocket URL
+  Allows switching servers without recompiling
+  
+  ### Model game.py
+  The game.py file is kept in its original version for the following reasons:
+  
+  ### Compatibility:
+  It is used by game_service.py for data validation
+  It provides the necessary Pydantic models for WebSocket communication
+  It is a direct dependency of game_service.py
+  It provides the base structure for data validation
+  It facilitates communication between frontend and backend
+  
+  ### Benefits:
+  Automatic data validation
+  Clear and consistent structure
+  Eases communication between frontend and backend
 
