@@ -162,125 +162,7 @@ FastAPI for the excellent framework
 Tauri for making desktop applications possible with web technologies
 React and TailwindCSS for the UI tools
 
-## Descripción
-Juego de Pictionary multijugador que permite a los usuarios dibujar y adivinar palabras en tiempo real.
-
-## Estructura del Proyecto
-```
-pictionary/
-├── backend/
-│   ├── api/
-│   │   └── v1/
-│   │       ├── game_state.py    # Lógica principal del juego
-│   │       └── websocket.py     # Endpoints WebSocket
-│   ├── models/
-│   │   └── game.py             # Modelos de datos del juego
-│   └── services/
-│       └── game_service.py     # Servicios de conexión
-└── frontend/
-    ├── src/
-    │   ├── components/         # Componentes React
-    │   ├── context/           # Contexto del juego
-    │   └── App.tsx           # Componente principal
-    └── .env                  # Variables de entorno frontend
-```
-
-## Variables de Entorno
-
-### Backend (.env)
-```env
-# Configuración del servidor
-HOST=0.0.0.0
-PORT=8000
-
-# Configuración de CORS
-CORS_ORIGINS=["http://localhost:5173"]
-
-# Configuración de WebSocket
-WS_PING_INTERVAL=30
-WS_PING_TIMEOUT=30
-```
-
-### Frontend (.env)
-```env
-# URL del servidor WebSocket
-VITE_WS_URL=ws://localhost:8000/api/v1/ws
-```
-
-## Modelos de Datos (game.py)
-
-El archivo `game.py` es fundamental para la comunicación entre el frontend y el backend:
-
-1. **Definición de Estructura**:
-   - `Player`: Define la estructura de un jugador (nombre)
-   - `GameState`: Define el estado del juego (jugadores, palabra actual, puntuaciones)
-
-2. **Validación de Datos**:
-   - Asegura que los datos que vienen del frontend tengan el formato correcto
-   - Valida los mensajes WebSocket antes de procesarlos
-
-3. **Serialización/Deserialización**:
-   - Convierte los datos del juego a JSON para enviarlos al frontend
-   - Convierte los mensajes JSON del frontend a objetos Python
-
-## Instalación
-
-1. Clonar el repositorio:
-```bash
-git clone https://github.com/tu-usuario/pictionary.git
-cd pictionary
-```
-
-2. Configurar el backend:
-```bash
-cd backend
-python -m venv venv
-source venv/bin/activate  # En Windows: venv\Scripts\activate
-pip install -r requirements.txt
-```
-
-3. Configurar el frontend:
-```bash
-cd frontend
-npm install
-```
-
-## Ejecución
-
-1. Iniciar el backend:
-```bash
-cd backend
-uvicorn main:app --reload
-```
-
-2. Iniciar el frontend:
-```bash
-cd frontend
-npm run dev
-```
-
-## Tecnologías Utilizadas
-
-- **Backend**:
-  - FastAPI
-  - WebSockets
-  - Pydantic
-
-- **Frontend**:
-  - React
-  - TypeScript
-  - Vite
-  - Canvas API
-
-## Características
-
-- Dibujo en tiempo real
-- Sistema de puntuación
-- Chat en tiempo real
-- Soporte para múltiples jugadores
-- Interfaz responsiva
-
-## Correcciones y Mejoras
+### Improvements
 
 ### Manejo de Variables de Entorno
 Se implementaron dos archivos `.env` separados para mejorar la configuración:
@@ -294,30 +176,18 @@ Se implementaron dos archivos `.env` separados para mejorar la configuración:
    - Configura la URL del WebSocket
    - Permite cambiar el servidor sin recompilar
 
-### Modelo game.py
-El archivo `game.py` se mantiene en su versión original por las siguientes razones:
+### Model game.py
+The game.py file is kept in its original version for the following reasons:
 
-1. **Compatibilidad**:
-   - Es usado por `game_service.py` para la validación de datos
-   - Proporciona los modelos Pydantic necesarios para la comunicación WebSocket
+### Compatibility:
+It is used by game_service.py for data validation
+It provides the necessary Pydantic models for WebSocket communication
+It is a direct dependency of game_service.py
+It provides the base structure for data validation
+It facilitates communication between frontend and backend
 
-2. **Estructura Original**:
-```python
-class Player(BaseModel):
-    name: str
+### Benefits:
+Automatic data validation
+Clear and consistent structure
+Eases communication between frontend and backend
 
-class GameState(BaseModel):
-    players: List[Player] = []
-    word: str = "house"
-    scores: Dict[str, int] = {}
-```
-
-3. **Razones para mantenerlo**:
-   - Es una dependencia directa de `game_service.py`
-   - Proporciona la estructura base para la validación de datos
-   - Facilita la comunicación entre frontend y backend
-
-4. **Beneficios**:
-   - Validación automática de datos
-   - Estructura clara y consistente
-   - Facilita la comunicación entre frontend y backend
